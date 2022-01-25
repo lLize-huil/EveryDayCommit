@@ -2,10 +2,10 @@ name: ci
 
 on:
   workflow_dispatch:
-    push:
+  push:
       branches:
         - master
-   schedule:
+  schedule:
      - cron: "0 0 * * *"
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
       - name: Auto green
         run: |
           git config --local user.email "1841632321@qq.com"
-          git config --local user.name "lLize-huil"
+          git config --local user.name "李泽辉"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           git commit --allow-empty -m "a commit a day keeps your girlfriend away"
